@@ -6,29 +6,30 @@
     <title>ExchangeKit | Crypto Development Tools</title>
     <style>
         :root {
-            --bg-primary: #0d1117;
-            --bg-secondary: #161b22;
-            --accent-primary: #0070f3;
-            --accent-secondary: #00ffcc;
-            --text-primary: #f0f6fc;
-            --text-secondary: #c9d1d9;
-            --card-bg: #21262d;
-            --card-border: #30363d;
+            --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --bg-light: #f8f9fa;
+            --text-dark: #212529;
+            --text-light: #ffffff;
+            --accent-primary: #6f42c1;
+            --accent-secondary: #00b4d8;
+            --accent-success: #20c997;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
         }
 
         body {
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
+            background: var(--bg-gradient);
+            color: var(--text-dark);
             line-height: 1.6;
-            padding: 0;
-            margin: 0;
+            min-height: 100vh;
         }
 
         .container {
@@ -40,40 +41,54 @@
         /* Header & Hero */
         .hero {
             text-align: center;
-            padding: 4rem 1rem;
-            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
-            border-bottom: 1px solid var(--card-border);
+            padding: 5rem 1rem;
+            color: var(--text-light);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .hero p {
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            max-width: 800px;
-            margin: 0 auto 2rem;
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
         }
 
         .badges {
-            margin: 1rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
         }
 
         .badge {
-            display: inline-block;
-            background-color: var(--card-bg);
-            color: var(--text-secondary);
-            padding: 0.3rem 0.7rem;
-            margin: 0.3rem;
-            border-radius: 20px;
-            border: 1px solid var(--card-border);
-            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            color: var(--text-light);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .badge:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.3);
         }
 
         /* Navigation */
@@ -81,143 +96,195 @@
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin: 2rem 0;
+            margin: 3rem 0;
             flex-wrap: wrap;
         }
 
         .nav-links a {
-            color: var(--accent-secondary);
+            color: var(--text-light);
             text-decoration: none;
             font-weight: 600;
-            transition: color 0.3s ease;
+            font-size: 1.1rem;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            transition: var(--transition);
         }
 
         .nav-links a:hover {
-            color: var(--accent-primary);
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
         }
 
-        /* Sections */
-        section {
-            margin: 4rem 0;
+        /* Content Sections */
+        .section {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: var(--card-shadow);
+            backdrop-filter: blur(10px);
         }
 
         h2 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
+            text-align: center;
             margin-bottom: 2rem;
             color: var(--accent-primary);
-            text-align: center;
+            font-weight: 700;
         }
 
         h3 {
             font-size: 1.5rem;
-            margin: 1.5rem 0 1rem;
             color: var(--accent-secondary);
-        }
-
-        /* About */
-        .about {
-            background-color: var(--bg-secondary);
-            padding: 3rem;
-            border-radius: 15px;
-            border: 1px solid var(--card-border);
+            margin: 1.5rem 0 1rem;
         }
 
         /* Projects Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
 
         .project-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 10px;
-            padding: 1.5rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.5);
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 112, 243, 0.1);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
         .project-card h4 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
         .project-status {
-            display: inline-block;
-            font-size: 0.7rem;
-            padding: 0.2rem 0.6rem;
-            border-radius: 15px;
-            margin-left: 0.5rem;
+            font-size: 0.8rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
             font-weight: bold;
         }
-        .status-stable { background: #2ea043; color: white; }
-        .status-beta { background: #d29922; color: black; }
-        .status-alpha { background: #da3633; color: white; }
+        .status-stable { background: var(--accent-success); color: white; }
+        .status-beta { background: #fd7e14; color: white; }
+        .status-alpha { background: #dc3545; color: white; }
 
         .stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
             margin: 1rem 0;
         }
 
         .stack-item {
-            display: inline-block;
-            background-color: var(--bg-primary);
-            color: var(--text-secondary);
-            padding: 0.2rem 0.6rem;
-            margin: 0.2rem;
-            border-radius: 5px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
             font-size: 0.8rem;
-            border: 1px solid var(--card-border);
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(111, 66, 193, 0.4);
+        }
+
+        /* Tech Stack */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .tech-category {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .tech-icons {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
 
         /* Contact */
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
             margin-top: 2rem;
             flex-wrap: wrap;
         }
 
         .contact-btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
             color: white;
             text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: transform 0.3s ease;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
         }
 
         .contact-btn:hover {
-            transform: scale(1.05);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
         }
 
         /* Footer */
         footer {
             text-align: center;
             padding: 2rem;
+            color: var(--text-light);
             margin-top: 4rem;
-            border-top: 1px solid var(--card-border);
-            color: var(--text-secondary);
         }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .project-card {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .project-card:nth-child(2) { animation-delay: 0.5s; }
+        .project-card:nth-child(3) { animation-delay: 1s; }
 
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1.2rem; }
-            .container { padding: 1rem; }
-            .nav-links { gap: 1rem; }
+            .hero p { font-size: 1.1rem; }
             .projects-grid { grid-template-columns: 1fr; }
+            .nav-links { gap: 1rem; }
+            .nav-links a { padding: 0.6rem 1.2rem; }
+            .contact-links { flex-direction: column; }
+            .section { padding: 2rem; }
         }
     </style>
 </head>
@@ -225,133 +292,117 @@
     <div class="container">
         <!-- Hero Section -->
         <header class="hero">
-            <h1>ExchangeKit</h1>
-            <p>Набор высокопроизводительных инструментов и библиотек для взаимодействия с криптовалютными биржами</p>
-            <p>Надежная автоматизация для трейдинга и анализа</p>
-            
-            <div class="badges">
-                <span class="badge">Python</span>
-                <span class="badge">Web3</span>
-                <span class="badge">Asyncio</span>
-                <span class="badge">REST API</span>
-                <span class="badge">WebSocket</span>
-                <span class="badge">Binance</span>
-                <span class="badge">Bybit</span>
-                <span class="badge">Arbitrage</span>
-            </div>
+            <div class="hero-content">
+                <h1>ExchangeKit</h1>
+                <p>Мощные инструменты для автоматизации криптотрейдинга</p>
+                <p>Создано трейдером для трейдеров</p>
+                
+                <div class="badges">
+                    <span class="badge">🚀 Высокая производительность</span>
+                    <span class="badge">🔐 Безопасность</span>
+                    <span class="badge">⚡ Мгновенное исполнение</span>
+                </div>
 
-            <div class="nav-links">
-                <a href="#about">Обо мне</a>
-                <a href="#projects">Проекты</a>
-                <a href="#stack">Технологии</a>
-                <a href="#contact">Контакты</a>
-                <a href="https://github.com/ExchangeKit">GitHub</a>
+                <div class="nav-links">
+                    <a href="#about">Обо мне</a>
+                    <a href="#projects">Проекты</a>
+                    <a href="#stack">Технологии</a>
+                    <a href="#contact">Контакты</a>
+                </div>
             </div>
         </header>
 
         <!-- About Section -->
-        <section id="about">
-            <h2>Обо мне</h2>
-            <div class="about">
-                <p>Привет! Я — опытный разработчик и крипто-энтузиаст с более чем 8-летним опытом в индустрии. Я создаю <strong>надёжные и эффективные инструменты</strong> для автоматизации торговли, анализа рынка и работы с NFT.</p>
-                <p>Мои проекты — это результат многолетней практики и желания поделиться решениями, которые реально работают и упрощают жизнь.</p>
-                <p><strong>Моя философия:</strong> Чистый код, максимальная производительность и безопасность пользователя.</p>
+        <section id="about" class="section">
+            <h2>✨ Обо мне</h2>
+            <div class="about-content">
+                <p>Привет! Я занимаюсь криптовалютами более 8 лет и создаю инструменты, которые делают трейдинг эффективнее.</p>
+                <p>Мои проекты — это результат тысяч часов практики, тестирования и оптимизации. Я верю в open-source и делюсь своими лучшими наработками.</p>
+                <div class="stack">
+                    <span class="stack-item">🎯 Практический опыт</span>
+                    <span class="stack-item">⚡ Высокая производительность</span>
+                    <span class="stack-item">🔓 Open-Source</span>
+                </div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects">
-            <h2>Ключевые проекты</h2>
+        <section id="projects" class="section">
+            <h2>🚀 Мои проекты</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <h4>universal-exchange-api <span class="project-status status-stable">stable</span></h4>
-                    <p>Единый асинхронный клиент для API Binance, Bybit, OKX и других бирж. Основа для всех остальных инструментов.</p>
+                    <h4>⚡ Universal API <span class="project-status status-stable">stable</span></h4>
+                    <p>Единый интерфейс для работы с Binance, Bybit, OKX и другими биржами. Асинхронный и молниеносный.</p>
                     <div class="stack">
                         <span class="stack-item">Python</span>
                         <span class="stack-item">aiohttp</span>
-                        <span class="stack-item">REST</span>
                         <span class="stack-item">WebSocket</span>
                     </div>
-                    <a href="https://github.com/ExchangeKit/universal-exchange-api" class="contact-btn">Смотреть на GitHub</a>
+                    <a href="https://github.com/ExchangeKit/universal-exchange-api" class="btn">Исследовать код</a>
                 </div>
 
                 <div class="project-card">
-                    <h4>crypto-portfolio-tracker <span class="project-status status-beta">beta</span></h4>
-                    <p>Консольный трекер портфеля, который агрегирует активы с нескольких бирж и кошельков в единую сводку.</p>
+                    <h4>📊 Portfolio Tracker <span class="project-status status-beta">beta</span></h4>
+                    <p>Мгновенный трекинг портфеля across multiple exchanges. Красивые графики и детальная аналитика.</p>
+                    <div class="stack">
+                        <span class="stack-item">React</span>
+                        <span class="stack-item">TypeScript</span>
+                        <span class="stack-item">Chart.js</span>
+                    </div>
+                    <a href="https://github.com/ExchangeKit/crypto-portfolio-tracker" class="btn">Исследовать код</a>
+                </div>
+
+                <div class="project-card">
+                    <h4>🤖 Trading Bot <span class="project-status status-alpha">alpha</span></h4>
+                    <p>Модульный trading bot с поддержкой арбитража, market-making и следования за трендом.</p>
                     <div class="stack">
                         <span class="stack-item">Python</span>
-                        <span class="stack-item">Requests</span>
-                        <span class="stack-item">Tabulate</span>
+                        <span class="stack-item">NumPy</span>
+                        <span class="stack-item">Pandas</span>
                     </div>
-                    <a href="https://github.com/ExchangeKit/crypto-portfolio-tracker" class="contact-btn">Смотреть на GitHub</a>
-                </div>
-
-                <div class="project-card">
-                    <h4>nft-mint-automation <span class="project-status status-beta">beta</span></h4>
-                    <p>Утилита для автоматизации участия в минтах на EVM-сетях (Ethereum, Polygon, Arbitrum).</p>
-                    <div class="stack">
-                        <span class="stack-item">Web3.py</span>
-                        <span class="stack-item">Ethereum</span>
-                        <span class="stack-item">Selenium</span>
-                    </div>
-                    <a href="https://github.com/ExchangeKit/nft-mint-automation" class="contact-btn">Смотреть на GitHub</a>
+                    <a href="https://github.com/ExchangeKit/trading-bot" class="btn">Исследовать код</a>
                 </div>
             </div>
         </section>
 
         <!-- Tech Stack Section -->
-        <section id="stack">
-            <h2>Технологический стек</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Бэкенд & Автоматизация</h3>
-                    <div class="stack">
-                        <span class="stack-item">Python 3.10+</span>
-                        <span class="stack-item">Asyncio</span>
-                        <span class="stack-item">aiohttp</span>
-                        <span class="stack-item">CCXT</span>
-                        <span class="stack-item">Web3.py</span>
-                    </div>
+        <section id="stack" class="section">
+            <h2>🛠 Технологический стек</h2>
+            <div class="tech-grid">
+                <div class="tech-category">
+                    <div class="tech-icons">🐍</div>
+                    <h3>Backend</h3>
+                    <p>Python 3.10+, Asyncio, FastAPI, aiohttp, Web3.py</p>
                 </div>
-
-                <div class="project-card">
-                    <h3>Инфраструктура</h3>
-                    <div class="stack">
-                        <span class="stack-item">Docker</span>
-                        <span class="stack-item">Linux</span>
-                        <span class="stack-item">Bash</span>
-                        <span class="stack-item">Git</span>
-                    </div>
+                <div class="tech-category">
+                    <div class="tech-icons">⚡</div>
+                    <h3>Performance</h3>
+                    <p>Rust, C++, Multiprocessing, Redis, ZeroMQ</p>
                 </div>
-
-                <div class="project-card">
-                    <h3>Биржи & Сети</h3>
-                    <div class="stack">
-                        <span class="stack-item">Binance API</span>
-                        <span class="stack-item">Bybit API</span>
-                        <span class="stack-item">OKX API</span>
-                        <span class="stack-item">Ethereum</span>
-                        <span class="stack-item">Polygon</span>
-                    </div>
+                <div class="tech-category">
+                    <div class="tech-icons">🔗</div>
+                    <h3>Blockchain</h3>
+                    <p>Ethereum, Polygon, Web3, Smart Contracts, Hardhat</p>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact">
-            <h2>Связаться со мной</h2>
-            <p style="text-align: center;">Есть вопросы, предложения или нашли баг? Я всегда открыт к общению!</p>
+        <section id="contact" class="section">
+            <h2>📞 Давайте работать вместе</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">Всегда открыт для коллабораций, идей и интересных проектов</p>
             
             <div class="contact-links">
-                <a href="https://github.com/ExchangeKit" class="contact-btn">GitHub</a>
-                <a href="https://t.me/your_channel" class="contact-btn">Telegram</a>
-                <a href="mailto:your-email@example.com" class="contact-btn">Email</a>
+                <a href="https://github.com/ExchangeKit" class="contact-btn">⭐ GitHub</a>
+                <a href="https://t.me/your_channel" class="contact-btn">📢 Telegram</a>
+                <a href="mailto:your-email@example.com" class="contact-btn">✉️ Email</a>
             </div>
         </section>
     </div>
 
     <footer>
-        <p>© 2024 ExchangeKit. Сделано с ❤️ для сообщества.</p>
+        <p>© 2024 ExchangeKit. Сделано с ❤️ и большим количеством кофе</p>
+        <p>🚀 Преодолеваем границы возможного в крипто-автоматизации</p>
     </footer>
 </body>
 </html>
