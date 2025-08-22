@@ -66,8 +66,8 @@
 
 ## 📞 Контакты
 
-- **📢 Telegram:** [@ExchangeKit](https://t.me/your_channel)
-- **📧 Email:** [your.email@example.com](mailto:your.email@example.com)
+- **📢 Telegram:** []()
+- **📧 Email:** []()
 - **💼 GitHub:** [ExchangeKit](https://github.com/ExchangeKit)
 
 ---
