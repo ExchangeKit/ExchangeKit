@@ -56,7 +56,7 @@
 
 ## 🌐 Посетите мой сайт
 
-[![Website](https://img.shields.io/badge/🌐-Посетить_сайт-6f42c1?style=for-the-badge)](https://exchangekit.github.io)
+[![Website](https://img.shields.io/badge/🌐-Посетить_сайт-6f42c1?style=for-the-badge)](https://exchangekit.github.io/ExchangeKit/)
 
 На сайте вы найдете:
 - 🎯 Демонстрации работы инструментов
